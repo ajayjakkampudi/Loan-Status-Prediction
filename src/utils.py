@@ -3,6 +3,8 @@ warnings.filterwarnings('ignore')
 import pandas as pd
 import os
 import pickle as pkl
+
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 from src.config import Config
 from src.logger import logging
 from src.exception import CustomeException
@@ -36,4 +38,35 @@ def find_num_cat_col(df: pd.DataFrame) -> Tuple[List, List]:
     print(num_lst)
     print(cat_lst)
     return num_lst, cat_lst
+
+# Model Evalutation
+def evaluate_models(X_train, y_train, X_val, y_val,models) -> Tuple[dict, dict]:
+    try:
+        train_report, val_report = {}, {}
+        for m in models:
+            
+            models[m].fit(X_train,y_train)
+            
+            y_train_pred = models[m].predict(X_train)
+            y_val_pred = models[m].predict(X_val)
+            
+            train_report[m] = {
+                'train_accuracy': accuracy_score(y_train, y_train_pred),
+                # 'train_precision': precision_score(y_train, y_train_pred),
+                # 'train_recall': recall_score(y_train, y_val_pred),
+                # 'train_f1': f1_score(y_train, y_train_pred),
+            }
+            
+            val_report[m] = {
+                'val_accuracy': accuracy_score(y_val, y_val_pred),
+                # 'val_precision': precision_score(y_val, y_val_pred),
+                # 'val_recall': recall_score(y_val, y_val_pred),
+                # 'val_f1': f1_score(y_val, y_val_pred),
+            }
+        logging.info("Train and val report was calculated")
+        return train_report, val_report
+
+    
+    except CustomeException as ce:
+        raise CustomeException(ce)
     
