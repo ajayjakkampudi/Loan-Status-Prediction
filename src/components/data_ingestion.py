@@ -6,6 +6,7 @@ import os
 import shutil
 from src.exception import CustomeException
 from src.logger import logging
+from src.components.data_transformation import DataTransform
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
@@ -13,7 +14,7 @@ from dataclasses import dataclass
 @dataclass
 class DataIngestionConfig:
     ''' Store the path of train, val, test'''
-    raw_path = os.path.join('artifacts','train.csv')
+    raw_path = os.path.join('artifacts','data.csv')
     train_path = os.path.join('artifacts','train.csv')
     val_path = os.path.join('artifacts','val.csv')
     test_path = os.path.join('artifacts','test.csv')
@@ -35,7 +36,7 @@ class DataIngestion:
             logging.info('Raw data is save in artifacts')
             
             # Splitting data to traiin and val
-            train_df, val_df = train_test_split(df,test_size=0.2,random_state=100)
+            train_df, val_df = train_test_split(df,test_size=0.2,random_state=100, stratify= df[df.columns[-1]])
             logging.info('Data was seperated to train and val')
             
             # Storing train, val and test in artifacts
@@ -62,5 +63,9 @@ class DataIngestion:
         except CustomeException as ce:
             raise CustomeException(ce)
 
-
+if __name__ == "__main__":
+    data_ingestion = DataIngestion()
+    data_transformed = DataTransform()
+    train_path, val_path, test_path = data_ingestion.data_ingestion_initiate()
+    data_transformed.initialize_data_transform(train_path= train_path, val_path= val_path)
     
