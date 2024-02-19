@@ -23,6 +23,19 @@ def save_object(save_path: str, object) -> None:
         
     except CustomeException as ce:
         raise CustomeException(ce)
+
+# Load the pickle object
+def load_object(obj_path: str):
+    try:
+        with open(obj_path, 'rb') as f:
+            obj = pkl.load(f)
+            # logging.info(f'Object file: {obj_path} was loaded')
+            
+            return obj
+        
+    except CustomeException as ce:
+        raise ce
+    
     
 # Gives the list of columns which has numeric and categorical data types 
 def find_num_cat_col(df: pd.DataFrame) -> Tuple[List, List]:

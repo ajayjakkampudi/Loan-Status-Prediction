@@ -12,92 +12,150 @@
         
         <div class="mb-3">
             <label class="form-label">Has Bluetooth or not</label>
-            <select class="form-control" name="blue" placeholder="Yes or No" required>
-                <option class="placeholder" selected disabled value="">Select your Gender</option>
-                <option value="Yes">
-                    1
+            <select class="form-control" name="bluetooth" placeholder="Yes or No" required>
+                <option class="placeholder" selected disabled value="">Select 1 if Yes or 0 if No</option>
+                <option value=1>
+                    Yes
                 </option>
-                <option value="No">
-                    0
+                <option value=0>
+                    No
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Clock Speed</label>
+            <input class="form-control" type="number" step= 'any' name="clock_speed"
+                placeholder="Enter Clock Speed"/>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Has dual sim or not</label>
+            <select class="form-control" name="dual_sim" placeholder="Yes or No" required>
+                <option class="placeholder" selected disabled value="">Select 1 if Yes or 0 if No</option>
+                <option value=1>
+                    Yes
+                </option>
+                <option value=0>
+                    No
                 </option>
             </select>
         </div>
         <div class="mb-3">
-            <label class="form-label">Race or Ethnicity</label>
-            <select class="form-control" name="ethnicity" placeholder="Enter you ethnicity" required>
-                <option class="placeholder" selected disabled value="">Select Ethnicity</option>
-                <option value="group A">
-                    Group A
+            <label class="form-label">Front Camera Megapixel</label>
+            <input class="form-control" type="number" name="front_camera_pixels"
+                placeholder="Enter Pixels"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Has 4G or not</label>
+            <select class="form-control" name="4G" placeholder="Yes or No" required>
+                <option class="placeholder" selected disabled value="">Select 1 if Yes or 0 if No</option>
+                <option value=1>
+                    Yes
                 </option>
-                <option value="group B">
-                    Group B
-                </option>
-                <option value="group C">
-                    Group C
-                </option>
-                <option value="group D">
-                    Group D
-                </option>
-                <option value="group E">
-                    Group E
+                <option value=0>
+                    No
                 </option>
             </select>
         </div>
         <div class="mb-3">
-            <label class="form-label">Parental Level of Education</label>
-            <select class="form-control" name="parental_level_of_education"
-                placeholder="Enter you Parent Education" required>
-                <option class="placeholder" selected disabled value="">Select Parent Education</option>
-                <option value="associate's degree">
-                    associate's degree
+            <label class="form-label">Internal Memory</label>
+            <input class="form-control" type="number" name="int_memory"
+                placeholder="Enter Internal Memory"/>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Mobile Depth</label>
+            <input class="form-control" type="number" name="m_dep" step= 'any'
+                placeholder="Enter Mobile Depth"/>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Mobile Weight</label>
+            <input class="form-control" type="number" name="mobile_wt"
+                placeholder="Enter Mobile Weight"/>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Number of Cores</label>
+            <input class="form-control" type="number" name="n_cores"
+                placeholder="Enter Cores"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Primary Camera Mega Pixels</label>
+            <input class="form-control" type="number" name="primary_camera_pixels"
+                placeholder="Primary Camera Mega Pixels"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Pixel Resolution Height</label>
+            <input class="form-control" type="number" name="px_height"
+                placeholder="Enter Pixel Resolution Height"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Pixel Resolution Width</label>
+            <input class="form-control" type="number" name="px_width"
+                placeholder="Enter Cores"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">RAM</label>
+            <input class="form-control" type="number" name="ram"
+                placeholder="Enter RAM"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Screen Height</label>
+            <input class="form-control" type="number" name="screen_height"
+                placeholder="Enter Screen Height"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Screen Width</label>
+            <input class="form-control" type="number" name="screen_width"
+                placeholder="Enter Screen Width"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Talk Time</label>
+            <input class="form-control" type="number" name="talk_time"
+                placeholder="Enter Talk Time"/>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Has 3G or not</label>
+            <select class="form-control" name="3g" placeholder="Yes or No" required>
+                <option class="placeholder" selected disabled value="">Select 1 if Yes or 0 if No</option>
+                <option value=1>
+                    Yes
                 </option>
-                <option value="bachelor's degree">
-                    bachelor's degree
-                </option>
-                <option value="high school">
-                    high school
-                </option>
-                <option value="master's degree">
-                    master's degree
-                </option>
-                <option value="some college">
-                    some college
-                </option>
-                <option value="some high school">
-                    some high school
+                <option value=0>
+                    No
                 </option>
             </select>
         </div>
+        
         <div class="mb-3">
-            <label class="form-label">Lunch Type</label>
-            <select class="form-control" name="lunch" placeholder="Enter you Lunch" required>
-                <option class="placeholder" selected disabled value="">Select Lunch Type</option>
-                <option value="free/reduced">
-                    free/reduced
+            <label class="form-label">Has touch screen or not</label>
+            <select class="form-control" name="touch_screen" placeholder="Yes or No" required>
+                <option class="placeholder" selected disabled value="">Select 1 if Yes or 0 if No</option>
+                <option value=1>
+                    Yes
                 </option>
-                <option value="standard">
-                    standard
+                <option value=0>
+                    No
                 </option>
             </select>
         </div>
+
         <div class="mb-3">
-            <label class="form-label">Test preparation Course</label>
-            <select class="form-control" name="test_preparation_course" placeholder="Enter you Course"
-                required>
-                <option class="placeholder" selected disabled value="">Select Test_course</option>
-                <option value="none">
-                    None
+            <label class="form-label">Has Wifi or not</label>
+            <select class="form-control" name="wifi" placeholder="Yes or No" required>
+                <option class="placeholder" selected disabled value="">Select 1 if Yes or 0 if No</option>
+                <option value=1>
+                    Yes
                 </option>
-                <option value="completed">
-                    Completed
+                <option value=0>
+                    No
                 </option>
             </select>
         </div>
-        <div class="mb-3">
-            <label class="form-label">Writing Score out of 100</label>
-            <input class="form-control" type="number" name="reading_score"
-                placeholder="Enter your Reading score" min='0' max='100' />
-        </div>
+
         
         <div class="mb-3">
             <input class="btn btn-primary" type="submit" value="Predict your Maths Score" required />
